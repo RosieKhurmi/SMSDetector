@@ -1,20 +1,19 @@
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
 import sys
 import os
-from dotenv import load_dotenv
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
 
-app = FastAPI()
-load_dotenv()
-
-base_dir = os.getenv('BASE_DIR')
-script_dir = os.path.abspath(os.path.join(base_dir, 'app', 'scripts'))
-sys.path.append(script_dir)
+# Ensure the current directory is in sys.path
+sys.path.append(os.path.dirname(__file__))
 
 from predict import classify_message
 
+app = FastAPI()
+
+
 class Message(BaseModel):
     text: str
+
 
 @app.post("/predict/")
 def predict(message: Message):
