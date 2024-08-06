@@ -19,3 +19,10 @@ build/
 
 # Logs
 *.log
+
+# Ignore pickle files
+*.pkl
+
+#Personal
+server/app/database/data/
+
