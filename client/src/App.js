@@ -5,7 +5,7 @@ function App() {
     return (
         <div className="App">
             <h1>SMS Detector</h1>
-            <Predict />
+            <Predict/>
         </div>
     );
 }

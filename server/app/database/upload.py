@@ -1,3 +1,5 @@
+# Upload CSV to database
+
 import pandas as pd
 from models import insert_data
 from connections import list_collection
@@ -12,6 +14,7 @@ def extract_csv_info(csv_info):
     ham_name = csv_info['ham']
 
     return csv_file, type_col, content_col, spam_name, ham_name
+
 
 # Sort spam and ham from the dictionary and return spam dataframe and ham dataframe
 def sort_spam_ham(csv_info):
