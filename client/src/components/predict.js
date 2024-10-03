@@ -24,15 +24,15 @@ function Predict() {
     // Form
     return (
         <div className='predict'>
-            <h3>Enter your message to determine whether it is spam or ham</h3>
             <div className='enter-message'>
-                <input
+                <textarea
                     type="text"
+                    placeholder='Type your message here'
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     className="input" // Apply styles
                 />
-                <button onClick={handleSubmit}>Submit</button>
+                <button onClick={handleSubmit}>Predict</button>
             </div>
             {prediction && <p>The message is {prediction}</p>}
         </div>
